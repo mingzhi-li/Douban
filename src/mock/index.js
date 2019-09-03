@@ -1,2 +1,7 @@
 var Mock =require('mockjs')
 Mock.mock("/homes","get",require("./json/homes.json"))
+Mock.mock("/movies","get",require("./json/movies.json"))
+Mock.mock("/findmovies","get",require("./json/findmovies.json"))
+Mock.mock("/categorys","get",require("./json/categorys.json"))
+Mock.mock("/books","get",require("./json/books.json"))
+Mock.mock("/goodbooks","get",require("./json/goodbooks.json"))

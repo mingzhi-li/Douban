@@ -7,8 +7,7 @@ import movie from '../pages/movie'
 import book from '../pages/book'
 import status from '../pages/status'
 import group from '../pages/group'
-
-
+import detail from '../components/detail'
 
 
 Vue.use(Router)
@@ -50,5 +49,11 @@ export default new Router({
       name: 'group',
       component: group
     },
+    {
+      path: '/detail',
+      name: 'detail',
+      component: detail
+    },
+    
   ]
 })

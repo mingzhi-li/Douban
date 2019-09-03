@@ -1,6 +1,6 @@
 <template>
     <div class="list">
-        <router-link to="/home" class="thumbnail" v-for="(v,i) in arrs" :key="i">
+        <router-link to="/detail" class="thumbnail" v-for="(v,i) in arrs" :key="i">
             <div class="content" >
                 <img :src="arrs[i].image" alt="cover">
                 <h3>{{arrs[i].title}}</h3>
