@@ -3,7 +3,7 @@
         <h1>
             <a href="javascript:history.go(-1);">取消</a>登录豆瓣
         </h1>
-        <!-- <form action="" method="post"> -->
+        <div class="title">
             <div class="form-user">
                 <label for="">
                     <input type="email" name="email" v-model="email">
@@ -23,7 +23,7 @@
             <div class="">
                 <button class="submit" type="submit" @click="loginbtn">登陆</button>
             </div>
-        <!-- </form> -->
+        </div>
         <div class="footer">
             <div class="more-login">使用其他方式登录 &amp; 找回密码</div>
             <div class="btns">
@@ -104,7 +104,7 @@ export default {
         font-size: 1.5rem;
         font-weight: normal;
     }
-    form{
+    .title{
         padding: 2rem 1.5rem;
     }
     input[type="email"], input[type="text"], input[type="password"] {

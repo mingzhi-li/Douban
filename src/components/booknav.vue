@@ -2,15 +2,16 @@
     <div>
         <bannernav title="最受关注图书｜虚构类" :arr="arr1"></bannernav>
         <bannernav title="最受关注图书｜非虚构类" :arr="arr2"></bannernav>
-        <bannernav title="豆瓣纸书" :arr="arr3"></bannernav>
-        
+        <booklist title="豆瓣纸书" :arr="arr3"></booklist>
     </div>
 </template>
 <script>
 import bannernav from './bannernav'
+import booklist from './booklist'
 export default {
     components:{
         bannernav,
+        booklist
     },
     created() {
         this.axios({

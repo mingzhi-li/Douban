@@ -8,7 +8,7 @@ import book from '../pages/book'
 import status from '../pages/status'
 import group from '../pages/group'
 import detail from '../components/detail'
-
+import search from '../pages/search'
 
 Vue.use(Router)
 
@@ -53,6 +53,11 @@ export default new Router({
       path: '/detail',
       name: 'detail',
       component: detail
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: search
     },
     
   ]

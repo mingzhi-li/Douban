@@ -1,7 +1,7 @@
 <template>
     <div class="reg-view">
         <h1 class="title">欢迎加入豆瓣</h1>
-        <!-- <form> -->
+        <div class="title">
             <div class="form-alias">
                 <strong>{{text}}</strong>
                 <label>
@@ -27,7 +27,7 @@
             <div class="form-submit">
                 <button class="submit" @click="submit1()">立即注册</button>
             </div>
-        <!-- </form> -->
+        </div>
         <div class="footer">
             <div class="agreement">点击「注册」代表你已阅读并同意用户使用协议</div>
             <div class="btns">
@@ -95,7 +95,7 @@ export default {
     color: #42bd56;
     text-align: center;
 }
-.reg-view form{
+.reg-view .title{
     padding: 2rem 1.5rem;
 }
 input::placeholder {

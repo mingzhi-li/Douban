@@ -4,7 +4,7 @@
         <div class="has-header">
             <booknav></booknav>
             <findbook title="发现好书" ></findbook>
-            <category></category>
+            <catebook></catebook>
             <download></download>
         </div>
     </div>
@@ -12,15 +12,17 @@
 <script>
 import headerbar from '../components/headerbar'
 import booknav from '../components/booknav'
+import booklist from '../components/booklist'
 import findbook from '../components/findbook'
-import category from '../components/category'
+import catebook from '../components/catebook'
 import download from '../components/download'
 export default {
     components:{
         headerbar,
         booknav,
+        booklist,
         findbook,
-        category,
+        catebook,
         download
     }
 }

@@ -4,6 +4,7 @@
             <h3>{{title}}</h3>
             <span><a href="">更多</a></span>
         </div>
+        
         <div class="swiper">
             <div class="small" v-for="(v,i) in arr"  :key="i">
                 <img :src="v.images.medium" >

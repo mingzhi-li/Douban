@@ -1,32 +1,42 @@
 <template>
-    <div class="list">
-        <router-link to="/detail" class="thumbnail" v-for="(v,i) in arrs" :key="i">
-            <div class="content" >
-                <img :src="arrs[i].image" alt="cover">
-                <h3>{{arrs[i].title}}</h3>
-                <p>{{newarr[i]}}</p>
-
-            </div>
-            <div class="author">
-                <span class="name">{{arrs[i].category_name}}</span>
-                <span class="label" v-if="arrs[i].subcategory_name">本活动来自栏目 {{arrs[i].subcategory_name}} </span>
-            </div>
-        </router-link>
+    <div>
+        <loading v-if="arrs.length<=0"></loading>
+        <div class="list" v-else>
+            <router-link to="/detail" class="thumbnail" v-for="(v,i) in arrs" :key="i">
+                <div class="content" >
+                    <img :src="arrs[i].image" alt="cover">
+                    <h3>{{arrs[i].title}}</h3>
+                    <p>{{newarr[i]}}</p>
+                </div>
+                <div class="author">
+                    <span class="name">{{arrs[i].category_name}}</span>
+                    <span class="label" v-if="arrs[i].subcategory_name">本活动来自栏目 {{arrs[i].subcategory_name}} </span>
+                </div>
+            </router-link>
+        </div>
     </div>
+    
 </template>
 <script>
+import loading from '../components/loading'
 export default {
+    components:{
+        loading
+    },
     created() {
-        this.axios({
+        setTimeout(()=>{
+            this.axios({
             method:"get",
             url:"/homes"
         }).then((data)=>{
             var arr=data.data.shouye;
             this.arrs=data.data.shouye;
             for(var i=0;i<arr.length;i++){
-                this.newarr.push(arr[i].content.substring(0,30))
+                this.newarr.push(arr[i].content.substring(0,2))
             }
         })
+        },1000)
+        
     },
     name: 'list',
     

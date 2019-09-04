@@ -25,7 +25,7 @@
         </router-link>
       </li>
     </ul>
-    <span class="talion" @click="showTalion"></span>
+    <span class="talion" @click="showTalion" ></span>
   </div>
 </template>
 <script>
@@ -36,9 +36,10 @@ export default {
   },
   methods: {
     showTalion: function () {
-      this.$emit('showTalion')
+       this.$router.push("./search")
     }
-  }
+  },
+  
 }
 </script>
 <style scoped>

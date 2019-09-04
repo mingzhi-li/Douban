@@ -7,7 +7,7 @@
         <div class="content">
             <ul class="onlyString">
                 <li v-for="(v,i) in arr" :key="i" class=""  style="border-color: rgb(255, 172, 45);">
-                    <a :href="v.href" :style="{color:v.color}">{{v.title}}</a>
+                    <a :href="v.href" :style="{color:v.color}" v-if="!v.line">{{v.title}}</a>
                 </li>
             </ul>
         </div>
@@ -24,10 +24,10 @@ export default {
     created() {
         this.axios({
             method:"get",
-            url:"/goodbooks"
+            url:"/findbooks"
         }).then((data)=>{
-            console.log(data)
-            this.arr=data.data.goodbooks;
+            //console.log(data)
+            this.arr=data.data.findbook;
             
         })
     },
@@ -88,4 +88,11 @@ export default {
         display: block;
         text-align: center;
     }
+    li:empty {
+    width: 100%;
+    display: block;
+    height: 0.1rem;
+    border: 0;
+    margin: 0;
+  }
 </style>

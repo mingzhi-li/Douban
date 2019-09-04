@@ -20,19 +20,19 @@ export default {
             //console.log(data.data.movie)
             var arrs=data.data.movie;
             arrs.filter((v,i)=>{
-                if(i<10){
+                if(i<16){
                     this.arr1.push(arrs[i])
                 }
                 return;
             })
             arrs.filter((v,i)=>{
-                if(i>10&&i<20){
+                if(i>15&&i<31){
                     this.arr2.push(arrs[i])
                 }
                 return;
             })
             arrs.filter((v,i)=>{
-                if(i>20&&i<31){
+                if(i>30&&i<46){
                     this.arr3.push(arrs[i])
                 }
                 return;
