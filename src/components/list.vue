@@ -1,16 +1,16 @@
 <template>
     <div>
-        <loading v-if="arrs.length<=0"></loading>
+        <loading v-if="obj.length<=0"></loading>
         <div class="list" v-else>
-            <router-link to="/detail" class="thumbnail" v-for="(v,i) in arrs" :key="i">
+            <router-link :to="{name:'detail',query:{'id':v.id}}" class="thumbnail" v-for="(v,i) in obj" :key="i" @click="funLink(v.id)">
                 <div class="content" >
-                    <img :src="arrs[i].image" alt="cover">
-                    <h3>{{arrs[i].title}}</h3>
-                    <p>{{newarr[i]}}</p>
+                    <img :src="obj[i].image" alt="cover">
+                    <h3>{{obj[i].title}}</h3>
+                    <p>{{newobj[i]}}</p>
                 </div>
                 <div class="author">
-                    <span class="name">{{arrs[i].category_name}}</span>
-                    <span class="label" v-if="arrs[i].subcategory_name">本活动来自栏目 {{arrs[i].subcategory_name}} </span>
+                    <span class="name">{{obj[i].category_name}}</span>
+                    <span class="label" v-if="obj[i].subcategory_name">本活动来自栏目 {{obj[i].subcategory_name}} </span>
                 </div>
             </router-link>
         </div>
@@ -18,7 +18,7 @@
     
 </template>
 <script>
-import loading from '../components/loading'
+import loading from './loading'
 export default {
     components:{
         loading
@@ -29,21 +29,28 @@ export default {
             method:"get",
             url:"/homes"
         }).then((data)=>{
-            var arr=data.data.shouye;
-            this.arrs=data.data.shouye;
-            for(var i=0;i<arr.length;i++){
-                this.newarr.push(arr[i].content.substring(0,2))
+            console.log(data.data.shouye)
+            var obj=data.data.shouye;
+            this.obj=data.data.shouye;
+            for(var i=0;i<obj.length;i++){
+                this.newobj.push(obj[i].content.substring(0,30))
             }
         })
         },1000)
         
     },
+    methods: {
+        funLink(i){
+            console.log(i)
+            this.$router.push("./detail?id="+i)
+        }
+    },
     name: 'list',
     
     data() {
         return {
-            arrs:[],
-            newarr:[]
+            obj:[],
+            newobj:[]
         }
     },
 }

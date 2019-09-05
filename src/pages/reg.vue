@@ -1,6 +1,8 @@
 <template>
     <div class="reg-view">
-        <h1 class="title">欢迎加入豆瓣</h1>
+        <h1>
+            <a href="javascript:history.go(-1);">取消</a>欢迎加入豆瓣
+        </h1>
         <div class="title">
             <div class="form-alias">
                 <strong>{{text}}</strong>
@@ -89,12 +91,32 @@ export default {
 </script>
 <style  scoped>
 .reg-view h1{
+        height: 4.5rem;
+        margin: 0 0 1rem 0;
+        padding: 0 1.8rem;
+        line-height: 4.5rem;
+        background: #fff;
+        border-bottom: 0.1rem solid #eee;
+        text-align: center;
+        color: #42bd56;
+        font-size: 3rem;
+        font-weight: 300;
+    }
+    h1 a{
+        position: absolute;
+        left: 1.8rem;
+        top: 0;
+        color: #42bd56;
+        font-size: 1.5rem;
+        font-weight: normal;
+    }
+/* .reg-view h1{
     margin: 10% 0 9%;
     font-size: 4rem;
     font-weight: 300;
     color: #42bd56;
     text-align: center;
-}
+} */
 .reg-view .title{
     padding: 2rem 1.5rem;
 }

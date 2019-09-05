@@ -9,7 +9,6 @@ import status from '../pages/status'
 import group from '../pages/group'
 import detail from '../components/detail'
 import search from '../pages/search'
-
 Vue.use(Router)
 
 export default new Router({
@@ -59,6 +58,5 @@ export default new Router({
       name: 'search',
       component: search
     },
-    
   ]
 })

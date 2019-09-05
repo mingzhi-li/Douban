@@ -1,7 +1,7 @@
 <template>
     <div class="user-bar">
         <div class="avatar">
-            <img src="../../static/img/avatar.jpg" alt="未登录">
+            <img src="../../static/img/avatar.png" alt="未登录">
         </div>
         <div class="holder">
             请先登录

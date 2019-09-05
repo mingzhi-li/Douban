@@ -7,7 +7,7 @@
             </li>
             <li class="nav-item">
                 <a href="https://movie.douban.com/" class="">使用桌面版</a>
-                <a href="#" class="">使用豆瓣</a>
+                <a href="#" class="">使用豆瓣APP</a>
             </li>
         </ul>
     </div>
@@ -38,14 +38,14 @@ div{
 }
 
 .navBottom a{
-    width: 50%;
+    width: 49%;
     display: inline-block;
     margin: 0 auto;
-    box-sizing: border-box;
+    
     font-size: 1.5rem;
     color: #42bd56;
 }
 .navBottom a:first-child {
-    border-right: .1rem solid #e5e5e5;
+    border-right: .1rem solid #e5e5e5;box-sizing: border-box;
 }
 </style>

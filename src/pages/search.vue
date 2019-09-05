@@ -1,27 +1,23 @@
 <template>
-    <div>
+    <div class="talion-view">
         <close></close>
-        <div class="has-header">
-            <searchlist></searchlist>
-        </div>
-        
     </div>
-    
-    
-    
 </template>
 <script>
 import close from '../components/close'
-import searchlist from '../components/searchlist'
-import navbottom from '../components/navbottom'
 export default {
     components:{
         close,
-        searchlist,
-        navbottom
     }
 }
 </script>
 <style  scoped>
-
+.talion-view{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 3;
+}
 </style>
