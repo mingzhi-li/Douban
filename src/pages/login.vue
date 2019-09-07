@@ -51,35 +51,36 @@ export default {
             this.isShow ? this.passType = 'text' : this.passType = 'password'
         },
         loginbtn:function(){
-            console.log("fjdksfhkds")
-            if(this.email==""||this.token==""){
-                this.text="请填写完整的信息"
-            }else{
-                let param =new URLSearchParams();
-                param.append("email",this.email);
-                param.append("token",this.token);
-                this.axios.post("http://localhost:3000/login",param).then((data)=>{
-                    console.log(data);
-                    console.log(data.data.linkid)
-                    if(data.data.linkid==4){
-                        this.text = "邮箱或密码错误";
-                    }else if(data.data.linkid==3){
-                        localStorage.setItem("token",data.data.token)
-                        console.log(data.data.token)
-                        var i = 4;
-                        var mytimer = setInterval(()=>{
-                            i--;
-                            if(i == 0){
-                                clearInterval(mytimer);
-                                this.$router.push("/home");
-                            }
-                            this.text = "登陆成功"+i+"秒后跳转到首面";
-                        },1000)
-                    }
-                },(err)=>{
-                    console.log(err);
-                })
-            }
+            this.$router.push('/home')
+            // console.log("fjdksfhkds")
+            // if(this.email==""||this.token==""){
+            //     this.text="请填写完整的信息"
+            // }else{
+            //     let param =new URLSearchParams();
+            //     param.append("email",this.email);
+            //     param.append("token",this.token);
+            //     this.axios.post("http://localhost:3000/login",param).then((data)=>{
+            //         console.log(data);
+            //         console.log(data.data.linkid)
+            //         if(data.data.linkid==4){
+            //             this.text = "邮箱或密码错误";
+            //         }else if(data.data.linkid==3){
+            //             localStorage.setItem("token",data.data.token)
+            //             console.log(data.data.token)
+            //             var i = 4;
+            //             var mytimer = setInterval(()=>{
+            //                 i--;
+            //                 if(i == 0){
+            //                     clearInterval(mytimer);
+            //                     this.$router.push("/home");
+            //                 }
+            //                 this.text = "登陆成功"+i+"秒后跳转到首面";
+            //             },1000)
+            //         }
+            //     },(err)=>{
+            //         console.log(err);
+            //     })
+            // }
         }
     },
 }

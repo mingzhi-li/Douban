@@ -57,51 +57,52 @@ export default {
             this.isShow ? this.passType = 'text' : this.passType = 'password'
         },
         submit1:function(){
-            console.log("sdfsdjfsdfds")
-            if(this.email==""||this.pass==""||this.name==""){
-                this.text="该邮箱已注册，请登录或换个邮箱注册"
-            }else{
-                let param =new URLSearchParams();
-                param.append("email",this.email);
-                param.append("pass",this.pass);
-                param.append("name",this.name);
-                this.axios.post("http://localhost:3000/reg",param).then((data)=>{
-                    console.log(data);
-                    console.log(data.data.linkid)
-                    if(data.data.linkid==1){
-                        this.text = "该邮箱已注册，请登录或换个邮箱注册";
-                    }else if(data.data.linkid==2){
-                        var i = 4;
-                        var mytimer = setInterval(()=>{
-                            i--;
-                            if(i == 0){
-                                clearInterval(mytimer);
-                                this.$router.push("/login");
-                            }
-                            this.text = "注册成功"+i+"秒后跳转到登录页面";
-                        },1000)
-                    }
-                },(err)=>{
-                    console.log(err);
-                })
-            }
+            this.$router.push('/login')
+            // console.log("sdfsdjfsdfds")
+            // if(this.email==""||this.pass==""||this.name==""){
+            //     this.text="该邮箱已注册，请登录或换个邮箱注册"
+            // }else{
+            //     let param =new URLSearchParams();
+            //     param.append("email",this.email);
+            //     param.append("pass",this.pass);
+            //     param.append("name",this.name);
+            //     this.axios.post("http://localhost:3000/reg",param).then((data)=>{
+            //         console.log(data);
+            //         console.log(data.data.linkid)
+            //         if(data.data.linkid==1){
+            //             this.text = "该邮箱已注册，请登录或换个邮箱注册";
+            //         }else if(data.data.linkid==2){
+            //             var i = 4;
+            //             var mytimer = setInterval(()=>{
+            //                 i--;
+            //                 if(i == 0){
+            //                     clearInterval(mytimer);
+            //                     this.$router.push("/login");
+            //                 }
+            //                 this.text = "注册成功"+i+"秒后跳转到登录页面";
+            //             },1000)
+            //         }
+            //     },(err)=>{
+            //         console.log(err);
+            //     })
+            // }
         }
     },
 }
 </script>
 <style  scoped>
 .reg-view h1{
-        height: 4.5rem;
-        margin: 0 0 1rem 0;
-        padding: 0 1.8rem;
-        line-height: 4.5rem;
-        background: #fff;
-        border-bottom: 0.1rem solid #eee;
-        text-align: center;
-        color: #42bd56;
-        font-size: 3rem;
-        font-weight: 300;
-    }
+    height: 4.5rem;
+    margin: 0 0 1rem 0;
+    padding: 0 1.8rem;
+    line-height: 4.5rem;
+    background: #fff;
+    border-bottom: 0.1rem solid #eee;
+    text-align: center;
+    color: #42bd56;
+    font-size: 3rem;
+    font-weight: 300;
+}
     h1 a{
         position: absolute;
         left: 1.8rem;
@@ -124,17 +125,17 @@ input::placeholder {
     color: #ccc;
 }
 input[type="text"], input[type="password"] {
-    display: inline-block;
-    width: 100%;
-    height: 4.4rem;
-    padding: 0 0.8rem;
-    box-sizing: border-box;
-    font-size: 1.5rem;
-    background: #fff;
-    border: 0.1rem solid #ccc;
-    border-top-left-radius: 0.3rem;
-    border-top-right-radius: 0.3rem;
-    outline: 0;
+  display: inline-block;
+  width: 100%;
+  height: 4.4rem;
+  padding: 0 0.8rem;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  background: #fff;
+  border: 0.1rem solid #ccc;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  outline: 0;
 }
 .form-pwd input, .form-name input {
     padding-right: 4rem;

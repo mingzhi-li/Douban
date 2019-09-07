@@ -6,7 +6,7 @@
         </div>
         
         <div class="swiper">
-            <div class="small" v-for="(v,i) in arr"  :key="i">
+            <div class="small" v-for="(v,i) in arr"  :key="i" @click="film(i)">
                 <img :src="v.images.medium" >
                 <p class="film">{{v.title}}</p>
                 <star :fivexx='v.rating.average'></star>
@@ -30,7 +30,10 @@ export default {
     },
     components:{
         star
-    }
+    },
+    methods: {
+        
+    },
 }
 </script>
 <style  scoped>
